@@ -22,8 +22,7 @@ Designed to demonstrate **object-oriented programming**, user input handling, an
 
 
 ## How to Use
-1. Clone the repository:
-       i.e: git clone https://github.com/Kaydee39181/cgpa_calculator.git
+1. Clone the repository: git clone https://github.com/Kaydee39181/cgpa_calculator.git
        
 2. Open the project in your preferred IDE (IntelliJ, Eclipse, NetBeans, VS code etc.).
 
@@ -120,10 +119,3 @@ public class CgpaCalculator {
         read.close();
     }
 }
-
-
-
-//Code Output
-
-<img width="893" height="929" alt="Screenshot 2026-01-15 201451" src="https://github.com/user-attachments/assets/65c99cc5-8bc0-4208-9f8e-d8d9b4fc88eb" />
-<img width="588" height="899" alt="Screenshot 2026-01-15 201436" src="https://github.com/user-attachments/assets/06077973-a375-4ec5-86b5-31a030bf7191" />
