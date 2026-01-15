@@ -1,102 +1,121 @@
 # Java CGPA Calculator 🎓
 
-A **console-based Java application** that calculates and tracks your CGPA. Designed to demonstrate **object-oriented programming**, user input handling, and basic file storage. Perfect for academic projects and showcasing Java fundamentals.  
+A **console-based Java application** that calculates and tracks your CGPA.  
+Designed to demonstrate **object-oriented programming**, user input handling, and basic file storage. Perfect for academic projects and showcasing Java fundamentals.  
 
 ---
 
 ## Features
-- Calculate CGPA for an academic session.
-- Handles only credit based grades(for now)
-- Stores user inputs temporarily (in memory)
-- Easy-to-use console interface
+- Calculate CGPA for an academic session (first and second semester).  
+- Handles only credit-based grades (for now).  
+- Stores user inputs temporarily (in memory).  
+- Easy-to-use console interface.  
 
 ---
 
-Skills Demonstrated
+## Skills Demonstrated
+- Java basics: variables, loops, input handling  
+- Object-oriented programming concepts  
+- Console application design  
+- Arithmetic and logical operations  
 
-Java basics: variables, loops, and input handling
 
-Object-oriented programming concepts
 
-Console application design
+## How to Use
+1. Clone the repository:
+       i.e: git clone https://github.com/Kaydee39181/cgpa_calculator.git
+       
+2. Open the project in your preferred IDE (IntelliJ, Eclipse, NetBeans, VS code etc.).
 
-Arithmetic and logical operations
+3. Run CGPACalculator.java.
 
+4. Enter the number of courses, grades, and credits as prompted.
+
+5. View your CGPA in the terminal.
+
+
+
+## License
+
+This project is free to use for learning and portfolio purposes.
+
+
+
+
+## Code Output
+
+<img width="893" height="929" alt="Screenshot 2026-01-15 201451" src="https://github.com/user-attachments/assets/65c99cc5-8bc0-4208-9f8e-d8d9b4fc88eb" />
+<img width="588" height="899" alt="Screenshot 2026-01-15 201436" src="https://github.com/user-attachments/assets/06077973-a375-4ec5-86b5-31a030bf7191" />
+
+---
 
 ## Code Example
+
 ```java
-//Program to calculate the CGPA of a student for first and second semester.
+// Program to calculate the CGPA of a student for first and second semester.
 
 import java.util.Scanner;
-public class CgpaCalculator{
-    public static void main(String[]args){
+
+public class CgpaCalculator {
+    public static void main(String[] args) {
         Scanner read = new Scanner(System.in);
 
         System.out.println("Welcome to the CGPA Calculator Program.\n");
-        //General Info
-        System.out.println("Enter your Fullname: ");
+
+        System.out.print("Enter your Fullname: ");
         String fname = read.nextLine();
 
-        System.out.println("\nEnter your Course: ");
+        System.out.print("Enter your Course: ");
         String course = read.nextLine();
 
-        System.out.println("\nEnter your Level: ");
+        System.out.print("Enter your Level: ");
         String level = read.nextLine();
 
-        System.out.println("\nEnter your Matric number: ");
+        System.out.print("Enter your Matric number: ");
         String matric_no = read.nextLine();
 
-        System.out.println("\nWhat School do you attend? ");
+        System.out.print("What School do you attend? ");
         String school = read.nextLine();
 
-        System.out.println("\n\n\nCGPA Calculator.\n\nFirst Semester. ");
+        System.out.println("\nCGPA Calculator\n\nFirst Semester");
 
-
-        //First Semester.
-        System.out.println("\nEnter how many units you offered in first semester: ");
+        // First Semester
+        System.out.print("Enter how many units you offered in first semester: ");
         int fUnits = read.nextInt();
 
-        System.out.println("\nHow many courses did you offer in first semester: ");
+        System.out.print("How many courses did you offer in first semester: ");
         int fnum = read.nextInt();
 
-        float Sum1 = 0;
-        for(int i=1; i<=fnum; i++){
-            System.out.println("\nInput the grade score for Course "+i+": ");
-            float Score1 = read.nextFloat();
-
-            Sum1 += Score1;
+        float sum1 = 0;
+        for (int i = 1; i <= fnum; i++) {
+            System.out.print("Input the grade score for Course " + i + ": ");
+            float score1 = read.nextFloat();
+            sum1 += score1;
         }
-        float GPA1 = Sum1/(float)fUnits;
+        float gpa1 = sum1 / (float) fUnits;
+        System.out.println("Your GPA for " + level + " level, First Semester is " + gpa1);
 
-        System.out.println("\nYour GPA for "+level+" level, First Semester is "+GPA1+".");
-
-
-        //Second Semester
-        System.out.println("\n\nSecond Semester.");
-        System.out.println("\nEnter how many units you offered in second semester: ");
+        // Second Semester
+        System.out.println("\nSecond Semester");
+        System.out.print("Enter how many units you offered in second semester: ");
         int sUnits = read.nextInt();
 
-        System.out.println("\nHow many courses did you offer in second semester: ");
+        System.out.print("How many courses did you offer in second semester: ");
         int snum = read.nextInt();
 
-        float Sum2 = 0;
-        for(int j=1; j<=snum; j++){
-            System.out.println("\nInput the grade score for Course "+j+": ");
-            float Score2 = read.nextFloat();
-
-            Sum2 += Score2;
+        float sum2 = 0;
+        for (int j = 1; j <= snum; j++) {
+            System.out.print("Input the grade score for Course " + j + ": ");
+            float score2 = read.nextFloat();
+            sum2 += score2;
         }
-        float GPA2 = Sum2/(float)sUnits;
+        float gpa2 = sum2 / (float) sUnits;
+        System.out.println("Your GPA for " + level + " level, Second Semester is " + gpa2);
 
-        System.out.println("\nYour GPA for "+level+" level, Second Semester is "+GPA2);
-
-
-        //CGPA Calculator
-
-        System.out.println("\n\nFinal "+level+" level CGPA.");
-        float CGPA = ((Sum1 + Sum2)/(fUnits + sUnits));
-
-        System.out.println("Hence "+fname+"("+matric_no+") in "+course+", Your CGPA for "+level+" level in "+school+" is "+CGPA);
+        // Final CGPA
+        float cgpa = (sum1 + sum2) / (fUnits + sUnits);
+        System.out.println("\nFinal CGPA");
+        System.out.println("Hence " + fname + " (" + matric_no + ") in " + course +  ", your CGPA for " + level + " level           in " + school + " is " + cgpa);
 
         read.close();
     }
@@ -104,34 +123,7 @@ public class CgpaCalculator{
 
 
 
-
-
-
-
-
 //Code Output
 
 <img width="893" height="929" alt="Screenshot 2026-01-15 201451" src="https://github.com/user-attachments/assets/65c99cc5-8bc0-4208-9f8e-d8d9b4fc88eb" />
 <img width="588" height="899" alt="Screenshot 2026-01-15 201436" src="https://github.com/user-attachments/assets/06077973-a375-4ec5-86b5-31a030bf7191" />
-
-
-
-
-How to Use
-
-1. Clone the repository:
-i.e: git clone https://github.com/Kaydee39181/cgpa_calculator.git
-
-2. Open the project in your preferred IDE (IntelliJ, Eclipse, NetBeans, etc.)
-
-3. Run CGPACalculator.java
-
-4. Enter the number of courses, grades, and credits as prompted
-
-5. View your CGPA in the terminal
-
-
-
-License
-
-This project is free to use for learning and portfolio purposes.
